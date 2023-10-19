@@ -1,0 +1,9 @@
+@media screen and (max-width: 1500px) {
+  section{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .list-section{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

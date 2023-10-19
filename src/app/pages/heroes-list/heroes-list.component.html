@@ -1,1 +1,10 @@
-<p>heroes-list works!</p>
+<section>
+  <h2 class="text-3xl">Listado de heroes</h2>
+
+  <section class="list-section mt-12 grid grid-cols-3 gap-y-16">
+    <div  *ngFor="let heroe of heroes">
+      <app-heroe-card [heroe]="heroe"></app-heroe-card>
+    </div>
+  </section>
+</section>
+

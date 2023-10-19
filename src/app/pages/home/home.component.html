@@ -1,3 +1,46 @@
-<h1 class="text-4xl font-semibold">Heroes</h1>
+<aside id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+    <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+       <ul class="space-y-2 font-medium">
+          <li>
+             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ">
+                <span class="ml-3 text-3xl">Menu</span>
+             </a>
+          </li>
+          <li>
+             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="32">
+                  <path d="M840-480 671-241q-13 18-31 29.5T600-200H180q-24.75 0-42.375-17.625T120-260v-440q0-24.75 17.625-42.375T180-760h420q22 0 40 11.5t31 29.5l169 239Zm-75 0L611-700H180v440h431l154-220Zm-585 0v220-440 220Z"/>
+                </svg>
+                <span class="flex-1 ml-3 whitespace-nowrap">Listado</span>
+             </a>
+          </li>
+          <li>
+             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28">
+                  <path d="M450-450H200v-60h250v-250h60v250h250v60H510v250h-60v-250Z"/>
+                </svg>
+                <span class="flex-1 ml-3 whitespace-nowrap">Agregar heroe</span>
+             </a>
+          </li>
+          <li>
+             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28">
+                  <path d="M796-121 533-384q-30 26-69.959 40.5T378-329q-108.162 0-183.081-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l264 262-44 44ZM377-389q81.25 0 138.125-57.5T572-585q0-81-56.875-138.5T377-781q-82.083 0-139.542 57.5Q180-666 180-585t57.458 138.5Q294.917-389 377-389Z"/>
+                </svg>
+                <span class="flex-1 ml-3 whitespace-nowrap">Buscar</span>
+             </a>
+          </li>
+       </ul>
+    </div>
+</aside>
 
-<router-outlet></router-outlet>
+<div class="p-4 sm:ml-64">
+  <div class="p-4 ">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
+
+
+
