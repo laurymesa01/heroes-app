@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService } from '../../services/heroes.service';
+import { Location } from "@angular/common";
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { Heroe } from 'src/app/interfaces/heroe.interface';
@@ -14,7 +15,8 @@ export class HeroeComponent implements OnInit{
   hero!: Heroe;
 
   constructor(private heroesService: HeroesService,
-              private route: ActivatedRoute){}
+              private route: ActivatedRoute,
+              private location: Location){}
 
   ngOnInit(){
     this.route.params.pipe(
@@ -23,6 +25,10 @@ export class HeroeComponent implements OnInit{
     .subscribe(hero => {
       this.hero = hero;
     })
+  }
+
+  goBack(){
+    this.location.back()
   }
 
 }

@@ -10,6 +10,7 @@ import { HeroeComponent } from './pages/heroe/heroe.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeroesListComponent } from './pages/heroes-list/heroes-list.component';
 import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
+import { ImagenPipe } from './pipes/imagen.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HeroeCardComponent } from './components/heroe-card/heroe-card.component
     HeroeComponent,
     HomeComponent,
     HeroesListComponent,
-    HeroeCardComponent
+    HeroeCardComponent,
+    ImagenPipe
   ],
   imports: [
     BrowserModule,
