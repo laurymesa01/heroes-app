@@ -1,18 +1,83 @@
-<form>
-  <div class="mb-6">
-    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-    <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required>
-  </div>
-  <div class="mb-6">
-    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-    <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-  </div>
-  <div class="flex items-start mb-6">
-    <div class="flex items-center h-5">
-      <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+<h1 class="text-5xl text-center">Nuevo heroe</h1>
+
+<form class="mt-12 flex flex-row space-x-12 px-18">
+  <div class="column space-y-6">
+
+    <div class="flex flex-row justify-between">
+      <div class="w-60">
+        <label for="superhero" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Super Heroe</label>
+        <input  type="text"
+                id="superhero"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+                placeholder="Superheroe"
+                required
+                name="superhero"
+                [(ngModel)]="hero.superhero">
+      </div>
+
+      <div class="w-64">
+        <label for="alter_ego" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alter Ego</label>
+        <input  type="text"
+                id="alter_ego"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+                placeholder="Alter Ego"
+                required
+                name="alter_ego"
+                [(ngModel)]="hero.alter_ego">
+      </div>
     </div>
-    <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+
+    <div>
+      <label for="first_appearance" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Primera aparicion</label>
+      <input  type="text"
+              id="first_appearance"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+              placeholder="Primera aparicion"
+              required
+              name="first_appearance"
+              [(ngModel)]="hero.first_appearance">
+    </div>
+
+    <div>
+      <label for="characters" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Personajes</label>
+      <input  type="text"
+              id="characters"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+              placeholder="Personajes"
+              required
+              name="characters"
+              [(ngModel)]="hero.characters">
+    </div>
+
+    <div>
+      <label for="creator" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Creador</label>
+      <select   id="creator"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 "
+                name="creator"
+                [(ngModel)]="hero.publisher">
+        <option *ngFor="let publisher of publishers">{{publisher.id}}</option>
+      </select>
+    </div>
+
+    <div class="">
+      <label for="alt_img" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foto Url</label>
+      <input  type="text"
+              id="alt_img"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+              placeholder="Foto Url"
+              required
+              name="alt_img"
+              [(ngModel)]="hero.alt_img">
+    </div>
+
+    <div>
+      <button class="w-full bg-gray-500 py-2 rounded-sm text-white font-bold" (click)="saveHero()">Guardar</button>
+    </div>
   </div>
-  <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+
+  <div class="column ">
+    <img [src]="hero | imagen" alt="">
+  </div>
+
 </form>
 

@@ -19,4 +19,12 @@ export class HeroesService {
   getHeroeById(id: string): Observable<Heroe>{
     return this.http.get<Heroe>(`${this.url}/${id}`);
   }
+
+  addHero(hero: Heroe): Observable<Heroe>{
+    return this.http.post<Heroe>(`${this.url}`, hero);
+  }
+
+  editHero(hero: Heroe): Observable<Heroe>{
+    return this.http.put<Heroe>(`${this.url}/${hero.id}`, hero);
+  }
 }

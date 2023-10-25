@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Heroe } from 'src/app/interfaces/heroe.interface';
+import { HeroesService } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-search',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
+
+  termino: string = '';
+  heroes: Heroe[] = [];
+
+  constructor(private heroesService: HeroesService){}
+
+  searchHoeroes(){}
 
 }
