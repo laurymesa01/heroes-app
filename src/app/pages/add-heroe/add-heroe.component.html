@@ -1,10 +1,10 @@
-<h1 class="text-5xl text-center">Nuevo heroe</h1>
+<h1 class="text-5xl text-center">{{title}}</h1>
 
 <form class="mt-12 flex flex-row space-x-12 px-18">
   <div class="column space-y-6">
 
     <div class="flex flex-row justify-between">
-      <div class="w-60">
+      <div class="row">
         <label for="superhero" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Super Heroe</label>
         <input  type="text"
                 id="superhero"
@@ -15,7 +15,7 @@
                 [(ngModel)]="hero.superhero">
       </div>
 
-      <div class="w-64">
+      <div class="row">
         <label for="alter_ego" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alter Ego</label>
         <input  type="text"
                 id="alter_ego"
@@ -70,14 +70,22 @@
               [(ngModel)]="hero.alt_img">
     </div>
 
-    <div>
-      <button class="w-full bg-gray-500 py-2 rounded-sm text-white font-bold" (click)="saveHero()">Guardar</button>
+    <div class="flex flex-row justify-between">
+      <div class="button">
+        <button class="w-full bg-gray-500 py-2 rounded-sm text-white font-bold" (click)="saveHero()">Guardar</button>
+      </div>
+
+      <div class="button" *ngIf="hero.id">
+        <button class="w-full bg-red-600 py-2 rounded-sm text-white font-bold" (click)="deleteHero()">Borrar</button>
+      </div>
     </div>
-  </div>
+    </div>
 
   <div class="column ">
     <img [src]="hero | imagen" alt="">
   </div>
+
+  <app-alert [alert] = "alert"></app-alert>
 
 </form>
 

@@ -27,4 +27,8 @@ export class HeroesService {
   editHero(hero: Heroe): Observable<Heroe>{
     return this.http.put<Heroe>(`${this.url}/${hero.id}`, hero);
   }
+
+  deleteHero(id: string){
+    return this.http.delete(`${this.url}/${id}`)
+  }
 }

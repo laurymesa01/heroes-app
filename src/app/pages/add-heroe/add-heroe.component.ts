@@ -11,6 +11,9 @@ import { switchMap } from 'rxjs';
 })
 export class AddHeroeComponent implements OnInit{
 
+  alert: boolean = false;
+  title: string = 'Nuevo heroe';
+
   publishers = [
     {
       id: 'DC Comics',
@@ -21,6 +24,7 @@ export class AddHeroeComponent implements OnInit{
       desc: 'Marvel-Comics'
     }
   ];
+
 
   hero: Heroe = {
     superhero: '',
@@ -36,13 +40,16 @@ export class AddHeroeComponent implements OnInit{
               private router: Router){}
 
   ngOnInit(){
-    this.route.params
+    if(this.router.url.includes('edit')){
+      this.route.params
       .pipe(
         switchMap(({id}) => this.heroesService.getHeroeById(id))
       )
       .subscribe(data => {
         this.hero = data;
+        this.title = this.hero.superhero;
       })
+    }
   }
 
 
@@ -60,9 +67,13 @@ export class AddHeroeComponent implements OnInit{
         this.router.navigate(['', hero.id]);
       })
     }
+  }
 
-
-
+  deleteHero(){
+    this.heroesService.deleteHero(this.hero.id!).subscribe(resp => {
+      this.router.navigate(['']);
+    })
+    this.alert = true;
   }
 
 }

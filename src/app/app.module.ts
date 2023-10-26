@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeroesListComponent } from './pages/heroes-list/heroes-list.component';
 import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     HomeComponent,
     HeroesListComponent,
     HeroeCardComponent,
-    ImagenPipe
+    ImagenPipe,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
