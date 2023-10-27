@@ -14,6 +14,10 @@ export class SearchComponent {
 
   constructor(private heroesService: HeroesService){}
 
-  searchHoeroes(){}
+  searchHoeroes(){
+    this.heroesService.searchHero(this.termino).subscribe(heroes => {
+      this.heroes = heroes;
+    })
+  }
 
 }

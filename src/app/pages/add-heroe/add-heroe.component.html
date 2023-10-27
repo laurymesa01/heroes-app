@@ -72,12 +72,17 @@
 
     <div class="flex flex-row justify-between">
       <div class="button">
-        <button class="w-full bg-gray-500 py-2 rounded-sm text-white font-bold" (click)="saveHero()">Guardar</button>
+        <button class="w-full bg-gray-500 hover:bg-gray-300 py-2 rounded text-white font-bold" (click)="saveHero()">Guardar</button>
       </div>
 
       <div class="button" *ngIf="hero.id">
-        <button class="w-full bg-red-600 py-2 rounded-sm text-white font-bold" (click)="deleteHero()">Borrar</button>
+        <button class="w-full bg-red-800 hover:bg-red-300 py-2 rounded-sm text-white font-bold" (click)="deleteHero()">Borrar</button>
       </div>
+
+      <app-modal-delete *ngIf="modal"
+                        [modal]="modal"
+                        [hero]="hero">
+      </app-modal-delete>
     </div>
     </div>
 

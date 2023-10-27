@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Heroe, Publisher } from 'src/app/interfaces/heroe.interface';
 import { HeroesService } from '../../services/heroes.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
@@ -11,7 +11,10 @@ import { switchMap } from 'rxjs';
 })
 export class AddHeroeComponent implements OnInit{
 
+  @Output() modalDelete = new EventEmitter<boolean>()
+
   alert: boolean = false;
+  modal: boolean = false;
   title: string = 'Nuevo heroe';
 
   publishers = [
@@ -70,10 +73,7 @@ export class AddHeroeComponent implements OnInit{
   }
 
   deleteHero(){
-    this.heroesService.deleteHero(this.hero.id!).subscribe(resp => {
-      this.router.navigate(['']);
-    })
-    this.alert = true;
+    this.modal = true;
   }
 
 }

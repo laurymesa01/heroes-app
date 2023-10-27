@@ -31,4 +31,8 @@ export class HeroesService {
   deleteHero(id: string){
     return this.http.delete(`${this.url}/${id}`)
   }
+
+  searchHero(params: string): Observable<Heroe[]>{
+    return this.http.get<Heroe[]>(`${this.url}?q=${params}`)
+  }
 }

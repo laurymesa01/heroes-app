@@ -13,6 +13,7 @@ import { HeroesListComponent } from './pages/heroes-list/heroes-list.component';
 import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { AlertComponent } from './components/alert/alert.component';
+import { ModalDeleteComponent } from './components/modal-delete/modal-delete.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AlertComponent } from './components/alert/alert.component';
     HeroesListComponent,
     HeroeCardComponent,
     ImagenPipe,
-    AlertComponent
+    AlertComponent,
+    ModalDeleteComponent
   ],
   imports: [
     BrowserModule,
