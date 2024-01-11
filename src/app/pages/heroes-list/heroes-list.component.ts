@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HeroesService } from '../../services/heroes.service';
 import { Heroe } from 'src/app/interfaces/heroe.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-heroes-list',
@@ -9,15 +10,23 @@ import { Heroe } from 'src/app/interfaces/heroe.interface';
 })
 export class HeroesListComponent implements OnInit{
 
+  @Input() hero: Heroe[] = [];
+
   heroes: Heroe[] = [];
 
-  constructor(private heroesService: HeroesService){}
+  constructor(private heroesService: HeroesService,
+              private router: Router){}
 
   ngOnInit(){
-    this.heroesService.getHeroes().subscribe(heroes => {
-      console.log(heroes);
-      this.heroes = heroes;
-    })
+    if (this.router.url.includes('search')) {
+      this.heroes = this.hero;
+    }
+    else{
+      this.heroesService.getHeroes().subscribe(heroes => {
+        console.log(heroes);
+        this.heroes = heroes;
+      })
+    }
   }
 
 }

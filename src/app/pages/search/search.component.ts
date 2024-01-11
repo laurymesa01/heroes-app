@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Heroe } from 'src/app/interfaces/heroe.interface';
 import { HeroesService } from '../../services/heroes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -17,6 +18,7 @@ export class SearchComponent {
   searchHoeroes(){
     this.heroesService.searchHero(this.termino).subscribe(heroes => {
       this.heroes = heroes;
+      console.log(heroes);
     })
   }
 

@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.input{
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 focus:outline-none focus:border-gray-500;
+}
 .btn{
   @apply inline-flex items-center px-3 py-2 text-lg font-medium text-center  rounded-sm text-red-600 hover:bg-red-100
 }

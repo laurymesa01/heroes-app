@@ -1,16 +1,15 @@
-@media screen and (max-width: 1500px) {
+/* @media screen and (max-width: 1500px) {
   section{
     padding-left: 2%;
-    /* padding-right: 5%; */
   }
   .list-section{
     grid-template-columns: repeat(2, 1fr);
   }
-}
+} */
 
-@media screen and (max-width: 820px) {
+/* @media screen and (max-width: 820px) {
   .list-section{
     display: flex;
     flex-direction: column;
   }
-}
+} */

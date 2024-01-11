@@ -1,15 +1,20 @@
-<h1 class="text-5xl pb-4">Buscador de heroes</h1>
+<section class="flex flex-col justify-center items-center md:items-start">
+  <h1 class="text-2xl sm:text-3xl md:text-5xl pb-4">Buscador de heroes</h1>
 
 <form class="mt-6">
   <div class="mb-6 flex">
     <input  type="text"
             id="name"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+            class="input"
             placeholder="Introduzca el nombre del superheroe"
             [(ngModel)]="termino"
             name="superhero"
             required>
-    <button type="submit" class="text-white bg-gray-500 hover:bg-gray-300  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 ml-5 text-center" (click)="searchHoeroes()">Buscar</button>
+    <button type="submit" class="text-white bg-gray-500 hover:bg-gray-300  font-medium rounded-lg text-sm px-3 md:px-5 py-2.5 ml-3 md:ml-5 text-center" (click)="searchHoeroes()">Buscar</button>
   </div>
 </form>
+
+  <app-heroes-list *ngIf="heroes.length > 0" [hero]="heroes"></app-heroes-list>
+</section>
+
 

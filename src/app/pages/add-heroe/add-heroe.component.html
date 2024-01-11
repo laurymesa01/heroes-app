@@ -1,14 +1,15 @@
-<h1 class="text-5xl text-center">{{title}}</h1>
+<section class="flex flex-col justify-center items-center">
+  <h1 class="text-3xl md:text-5xl text-center">{{title}}</h1>
 
-<form class="mt-12 flex flex-row space-x-12 px-18">
-  <div class="column space-y-6">
+<form class="mt-12 flex flex-col  lg:flex-row px-18">
+  <div class="column space-y-6  w-full lg:ml-4 xl:ml-0">
 
-    <div class="flex flex-row justify-between">
+    <div class="flex flex-col lg:flex-row justify-between">
       <div class="row">
         <label for="superhero" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Super Heroe</label>
         <input  type="text"
                 id="superhero"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+                class="input"
                 placeholder="Superheroe"
                 required
                 name="superhero"
@@ -19,7 +20,7 @@
         <label for="alter_ego" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alter Ego</label>
         <input  type="text"
                 id="alter_ego"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+                class="input"
                 placeholder="Alter Ego"
                 required
                 name="alter_ego"
@@ -31,7 +32,7 @@
       <label for="first_appearance" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Primera aparicion</label>
       <input  type="text"
               id="first_appearance"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+              class="input"
               placeholder="Primera aparicion"
               required
               name="first_appearance"
@@ -42,7 +43,7 @@
       <label for="characters" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Personajes</label>
       <input  type="text"
               id="characters"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+              class="input"
               placeholder="Personajes"
               required
               name="characters"
@@ -52,7 +53,7 @@
     <div>
       <label for="creator" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Creador</label>
       <select   id="creator"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 "
+                class="input"
                 name="creator"
                 [(ngModel)]="hero.publisher">
         <option *ngFor="let publisher of publishers">{{publisher.id}}</option>
@@ -63,7 +64,7 @@
       <label for="alt_img" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foto Url</label>
       <input  type="text"
               id="alt_img"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5"
+              class="input"
               placeholder="Foto Url"
               required
               name="alt_img"
@@ -86,11 +87,13 @@
     </div>
     </div>
 
-  <div class="column ">
+  <div class="img-container column">
     <img [src]="hero | imagen" alt="">
   </div>
 
   <app-alert [alert] = "alert"></app-alert>
 
 </form>
+</section>
+
 
