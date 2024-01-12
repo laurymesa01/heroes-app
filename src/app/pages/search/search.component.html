@@ -1,7 +1,7 @@
 <section class="flex flex-col justify-center items-center md:items-start">
-  <h1 class="text-2xl sm:text-3xl md:text-5xl pb-4">Buscador de heroes</h1>
+  <h1 class="text-2xl sm:text-3xl md:text-5xl pb-4">Buscador de héroes</h1>
 
-<form class="mt-6">
+<form class="mt-6" (ngSubmit)="searchHoeroes()">
   <div class="mb-6 flex">
     <input  type="text"
             id="name"
@@ -9,12 +9,25 @@
             placeholder="Introduzca el nombre del superheroe"
             [(ngModel)]="termino"
             name="superhero"
-            required>
+            required
+            >
     <button type="submit" class="text-white bg-gray-500 hover:bg-gray-300  font-medium rounded-lg text-sm px-3 md:px-5 py-2.5 ml-3 md:ml-5 text-center" (click)="searchHoeroes()">Buscar</button>
   </div>
+
 </form>
 
-  <app-heroes-list *ngIf="heroes.length > 0" [hero]="heroes"></app-heroes-list>
+<section *ngIf="ok">
+  <div *ngIf="heroes.length > 0; else noHero">
+    <app-heroes-list  [hero]="heroes"></app-heroes-list>
+  </div>
+
+  <ng-template #noHero>
+    <h1 class="text-2xl sm:text-3xl">
+      No se encontro ningun heroe con el termino {{termino}}
+    </h1>
+  </ng-template>
+</section>
+
 </section>
 
 

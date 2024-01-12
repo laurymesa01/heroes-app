@@ -15,7 +15,7 @@ export class AddHeroeComponent implements OnInit{
 
   alert: boolean = false;
   modal: boolean = false;
-  title: string = 'Nuevo heroe';
+  title: string = 'Nuevo héroe';
 
   publishers = [
     {

@@ -1,5 +1,5 @@
 .hero-card{
-  height: 900px;
+  height: 125vh;
 }
 
 .hero-card img{
@@ -7,10 +7,10 @@
   width: 100%;
 }
 
-@media screen and (max-width: 1140px) {
+/* @media screen and (max-width: 1140px) {
   .hero-card{
     width: 80%;
   }
-}
+} */
 
 

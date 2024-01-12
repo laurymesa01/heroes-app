@@ -6,7 +6,7 @@
 
     <div class="flex flex-col lg:flex-row justify-between">
       <div class="row">
-        <label for="superhero" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Super Heroe</label>
+        <label for="superhero" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Súper Héroe</label>
         <input  type="text"
                 id="superhero"
                 class="input"
@@ -29,7 +29,7 @@
     </div>
 
     <div>
-      <label for="first_appearance" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Primera aparicion</label>
+      <label for="first_appearance" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Primera aparición</label>
       <input  type="text"
               id="first_appearance"
               class="input"
@@ -76,7 +76,7 @@
         <button class="w-full bg-gray-500 hover:bg-gray-300 py-2 rounded text-white font-bold" (click)="saveHero()">Guardar</button>
       </div>
 
-      <div class="button" *ngIf="hero.id">
+      <div class="button ml-2" *ngIf="hero.id">
         <button class="w-full bg-red-800 hover:bg-red-300 py-2 rounded-sm text-white font-bold" (click)="deleteHero()">Borrar</button>
       </div>
 

@@ -1,16 +1,16 @@
-<div class="hero-card max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="hero-card max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col">
 
   <img class="rounded-t-lg" [src]="heroe | imagen" alt="" />
-  <div class="p-5">
+  <div class="p-5 flex flex-col justify-between grow">
       <h5 class="mb-2 text-2xl font-bold tracking-wide text-gray-900">{{heroe.superhero}}</h5>
       <h6 class="text-lg font-medium">{{heroe.alter_ego}}</h6>
       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{heroe.publisher}}</p>
-      <p class="mb-2"> <strong>Primera aparicion:</strong> {{heroe.first_appearance}}</p>
+      <p class="mb-2"> <strong>Primera aparición:</strong> {{heroe.first_appearance}}</p>
       <p> <strong>Personajes:</strong> {{heroe.characters}}</p>
 
       <div class="mt-8 flex flex-row justify-between">
         <a [routerLink]="['', heroe.id]" class="btn">
-          Leer mas
+          Leer más
           <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
           </svg>

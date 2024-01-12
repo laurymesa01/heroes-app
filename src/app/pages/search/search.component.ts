@@ -11,11 +11,13 @@ import { Router } from '@angular/router';
 export class SearchComponent {
 
   termino: string = '';
+  ok: boolean = false;
   heroes: Heroe[] = [];
 
   constructor(private heroesService: HeroesService){}
 
   searchHoeroes(){
+    this.ok = true;
     this.heroesService.searchHero(this.termino).subscribe(heroes => {
       this.heroes = heroes;
       console.log(heroes);

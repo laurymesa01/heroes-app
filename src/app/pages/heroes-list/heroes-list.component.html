@@ -1,7 +1,7 @@
-<section class="flex flex-col justify-center items-center">
-  <h2 class="text-2xl sm:text-3xl">Listado de heroes</h2>
+<section class="flex flex-col justify-end items-center">
+  <h2 class="text-2xl sm:text-3xl">Listado de héroes</h2>
 
-  <section class="list-section mt-12 flex flex-col  sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-y-8 sm:gap-x-4 lg:gap-x-4">
+  <section class="list-section mt-12 flex flex-col space-y-6 sm:space-y-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-y-8 sm:gap-x-4 lg:gap-x-4">
     <div  *ngFor="let heroe of heroes">
       <app-heroe-card [heroe]="heroe"></app-heroe-card>
     </div>
